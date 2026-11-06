@@ -1,8 +1,8 @@
 class_name Horse
 extends Node2D
 
-signal horse_exploded(id: int)
-signal horse_won(id: int)
+signal horse_exploded
+signal horse_won
 
 const MIN_SPEED: float = 2.0
 const MAX_SPEED: float = 8.0
@@ -72,23 +72,33 @@ func start_racing() -> void:
 	speed_change_timer.start()
 	
 func finish_race() -> void:
-	horse_won.emit()
+	if not has_exploded:
+		horse_won.emit()
 	is_racing = false
 	speed_change_timer.stop()
 
 func explode():
 	horse_sprite.visible = false
+	panel.visible = false
+	
+	has_exploded = true
 	explosion.visible = true
 	AudioManager.play_explosion()
+	speed_change_timer.stop()
 	explosion.play()
 	await explosion.animation_finished
 	explosion.visible = false
-	panel.visible = false
-	horse_exploded.emit(horse_id)
+	horse_exploded.emit()
 
 
 func randomize_speed() -> void:
+	if has_exploded:
+		return
 	speed = randf_range(MIN_SPEED, MAX_SPEED)
 	speed_change_timer.wait_time = randf_range(2.0, 5.0)
+	maybe_explode()
+
+
+func maybe_explode() -> void:
 	if randf() < explosion_chance:
 		explode()

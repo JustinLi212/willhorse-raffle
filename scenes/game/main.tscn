@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://lm63j8gxj1a6" path="res://assets/start.png" id="11_7x2v0"]
 [ext_resource type="AudioStream" uid="uid://dqes5dxt5yis5" path="res://assets/audio/countdown.mp3" id="12_hgy02"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxb6r"]
-size = Vector2(44, 751)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mogw1"]
+normal = Vector2(-1, 0)
 
 [sub_resource type="Animation" id="Animation_hk6r2"]
 length = 0.001
@@ -197,8 +197,8 @@ texture = ExtResource("2_gni4u")
 [node name="FinishLineArea2D" type="Area2D" parent="." unique_id=1681114681]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLineArea2D" unique_id=1675608427]
-position = Vector2(1092, 324)
-shape = SubResource("RectangleShape2D_bxb6r")
+position = Vector2(1070, 324)
+shape = SubResource("WorldBoundaryShape2D_mogw1")
 
 [node name="HorseSpawner" type="Node" parent="." unique_id=1164791829]
 script = ExtResource("2_4ulth")
