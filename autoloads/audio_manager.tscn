@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dl0q5sx7amixk"]
+
+[ext_resource type="AudioStream" uid="uid://dspdrd34e8xbb" path="res://assets/audio/Horse Race Theme.wav" id="1_03ao1"]
+[ext_resource type="Script" uid="uid://codpjrorg0bdl" path="res://autoloads/audio_manager.gd" id="1_nb6j2"]
+[ext_resource type="AudioStream" uid="uid://bjsweiaht6hew" path="res://assets/audio/horse scream.mp3" id="3_k2mv4"]
+[ext_resource type="AudioStream" uid="uid://c2rcua7iskbat" path="res://assets/audio/horse ah-.mp3" id="4_vovef"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2h45r"]
+random_pitch = 1.122462
+streams_count = 2
+stream_0/stream = ExtResource("3_k2mv4")
+stream_1/stream = ExtResource("4_vovef")
+
+[node name="AudioManager" type="Node" unique_id=288399438]
+script = ExtResource("1_nb6j2")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1748316496]
+stream = ExtResource("1_03ao1")
+volume_db = -20.0
+autoplay = true
+
+[node name="ExplosionPlayer" type="AudioStreamPlayer" parent="." unique_id=681899713]
+stream = SubResource("AudioStreamRandomizer_2h45r")
+volume_db = -20.0
+max_polyphony = 64

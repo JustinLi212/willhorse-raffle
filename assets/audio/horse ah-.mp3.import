@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2rcua7iskbat"
+path="res://.godot/imported/horse ah-.mp3-3d8e31fd365011e9578400a91ffe1c49.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/horse ah-.mp3"
+dest_files=["res://.godot/imported/horse ah-.mp3-3d8e31fd365011e9578400a91ffe1c49.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

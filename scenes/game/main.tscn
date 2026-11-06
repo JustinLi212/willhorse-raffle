@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://bn0taqd66rbb4"]
+
+[ext_resource type="Script" uid="uid://btiqr4p03iswq" path="res://scenes/game/race_manager.gd" id="1_4iem3"]
+[ext_resource type="Script" uid="uid://k8pmcdhlmlo6" path="res://scenes/game/horse_spawner.gd" id="2_4ulth"]
+[ext_resource type="Texture2D" uid="uid://xa8sfe0h1vtu" path="res://assets/background.png" id="2_gni4u"]
+[ext_resource type="AudioStream" uid="uid://bcdba2q0yc486" path="res://assets/audio/horse running.mp3" id="5_eupcb"]
+[ext_resource type="Texture2D" uid="uid://cnqjry6s2garl" path="res://assets/front_barrier.png" id="6_l8nso"]
+[ext_resource type="PackedScene" uid="uid://dwjjd65ix1g1d" path="res://scenes/game/end_screen.tscn" id="7_yepdf"]
+[ext_resource type="Texture2D" uid="uid://dadyrtlw1ghsn" path="res://assets/cd2.png" id="8_c0cff"]
+[ext_resource type="Texture2D" uid="uid://b3ef73cxnt4bs" path="res://assets/cd3.png" id="9_1ipjf"]
+[ext_resource type="Texture2D" uid="uid://dlmloy4un7oc7" path="res://assets/cd1.png" id="10_l2msi"]
+[ext_resource type="Texture2D" uid="uid://lm63j8gxj1a6" path="res://assets/start.png" id="11_7x2v0"]
+[ext_resource type="AudioStream" uid="uid://dqes5dxt5yis5" path="res://assets/audio/countdown.mp3" id="12_hgy02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxb6r"]
+size = Vector2(44, 751)
+
+[sub_resource type="Animation" id="Animation_hk6r2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.59, 2.59)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_c0cff")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5wwh8"]
+resource_name = "countdown"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666665, 0.7333333, 0.96666664, 1.4333333, 1.6333333, 2.1666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.59, 2.59), Vector2(3.5, 3.5), Vector2(2.59, 2.59), Vector2(3.59, 3.59), Vector2(2.59, 2.59), Vector2(3.59, 3.59), Vector2(2.59, 2.59)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7333333, 1.4333333, 2.1666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_1ipjf"), ExtResource("8_c0cff"), ExtResource("10_l2msi"), ExtResource("11_7x2v0")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.2333333, 2.40853, 2.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(-172, -46), Vector2(-743.00006, -137)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.2333333, 2.40853, 2.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, -1.4137167, -2.8448868]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_race"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmpan"]
+_data = {
+&"RESET": SubResource("Animation_hk6r2"),
+&"countdown": SubResource("Animation_5wwh8")
+}
+
+[node name="Race" type="Node" unique_id=1373827731]
+script = ExtResource("1_4iem3")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=377735063]
+position = Vector2(576, 324.00003)
+scale = Vector2(0.6, 0.6000001)
+texture = ExtResource("2_gni4u")
+
+[node name="FinishLineArea2D" type="Area2D" parent="." unique_id=1681114681]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLineArea2D" unique_id=1675608427]
+position = Vector2(1092, 324)
+shape = SubResource("RectangleShape2D_bxb6r")
+
+[node name="HorseSpawner" type="Node" parent="." unique_id=1164791829]
+script = ExtResource("2_4ulth")
+
+[node name="HorseRunAudio" type="AudioStreamPlayer" parent="." unique_id=100025941]
+stream = ExtResource("5_eupcb")
+
+[node name="HorseVictoryAudio" type="AudioStreamPlayer" parent="." unique_id=615293495]
+
+[node name="FrontBarrier" type="Sprite2D" parent="." unique_id=1159232713]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_l8nso")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1451823143]
+
+[node name="EndScreen" parent="UI" unique_id=434540524 instance=ExtResource("7_yepdf")]
+visible = false
+
+[node name="StartCountdown" type="Control" parent="UI" unique_id=1624742939]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/StartCountdown" unique_id=169559025]
+visible = false
+scale = Vector2(2.59, 2.59)
+texture = ExtResource("8_c0cff")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/StartCountdown" unique_id=1091040271]
+libraries/ = SubResource("AnimationLibrary_rmpan")
+autoplay = &"countdown"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="UI/StartCountdown" unique_id=506851873]
+stream = ExtResource("12_hgy02")
+
+[connection signal="body_entered" from="FinishLineArea2D" to="FinishLineArea2D" method="_on_body_entered"]

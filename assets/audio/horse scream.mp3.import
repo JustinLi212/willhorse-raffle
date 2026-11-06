@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjsweiaht6hew"
+path="res://.godot/imported/horse scream.mp3-0e565473718afe4ecec0dd3cf272e025.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/horse scream.mp3"
+dest_files=["res://.godot/imported/horse scream.mp3-0e565473718afe4ecec0dd3cf272e025.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dim6p6luhy7bo"]
+
+[ext_resource type="Script" uid="uid://c0h7ghp1gitex" path="res://scenes/start/title_scene.gd" id="1_faptf"]
+[ext_resource type="Texture2D" uid="uid://cc7euk6gtonuy" path="res://assets/title_screen.png" id="2_faptf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2h45r"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="TitleScene" type="Node" unique_id=825236828]
+script = ExtResource("1_faptf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1585269262]
+offset_right = 576.0
+offset_bottom = 324.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_faptf")
+
+[node name="Button" type="Button" parent="." unique_id=1993863000]
+offset_left = 767.0
+offset_top = 24.0
+offset_right = 1134.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 70
+text = "Let the
+race begin!"
+
+[node name="Panel" type="Panel" parent="." unique_id=1060127689]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -334.60574
+offset_top = -114.164
+offset_right = 397.70117
+offset_bottom = -7.3564453
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.030401906
+theme_override_styles/panel = SubResource("StyleBoxFlat_2h45r")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=1623706387]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "race horses to select a random winner"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

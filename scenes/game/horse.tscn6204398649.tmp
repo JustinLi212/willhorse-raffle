@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://ddyvhgo0mateq"]
+
+[ext_resource type="Script" uid="uid://c56epf2ku3gbw" path="res://scenes/game/horse.gd" id="1_ayhrb"]
+[ext_resource type="Texture2D" uid="uid://bauep1wcofm2q" path="res://assets/wills/will1.png" id="2_jje58"]
+[ext_resource type="Texture2D" uid="uid://dsb0b01770uj8" path="res://assets/explosion/explosion.png" id="3_osa5h"]
+[ext_resource type="AudioStream" uid="uid://c2rcua7iskbat" path="res://assets/audio/horse ah-.mp3" id="4_jje58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jje58"]
+atlas = ExtResource("3_osa5h")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iajyu"]
+atlas = ExtResource("3_osa5h")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayq03"]
+atlas = ExtResource("3_osa5h")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nta0q"]
+atlas = ExtResource("3_osa5h")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcaw0"]
+atlas = ExtResource("3_osa5h")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crwwg"]
+atlas = ExtResource("3_osa5h")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp58g"]
+atlas = ExtResource("3_osa5h")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0r5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jje58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iajyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayq03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nta0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcaw0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crwwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tp58g")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2h45r"]
+bg_color = Color(0, 0, 0, 0.23921569)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.28235295)
+
+[node name="Horse" type="Node2D" unique_id=147643146]
+script = ExtResource("1_ayhrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=752560924]
+texture = ExtResource("2_jje58")
+flip_h = true
+
+[node name="Explosion" type="AnimatedSprite2D" parent="." unique_id=1619298744]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_p0r5x")
+frame = 7
+frame_progress = 1.0
+
+[node name="ScreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2099345516]
+stream = ExtResource("4_jje58")
+volume_db = -5.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1612390521]
+offset_left = -68.0
+offset_top = -79.0
+offset_right = 68.0
+offset_bottom = -54.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2h45r")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=1549248100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "panteater1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=299458280]
+target_position = Vector2(65, 0)
+
+[node name="SpeedChangeTimer" type="Timer" parent="." unique_id=521427181]
+autostart = true
+
+[connection signal="timeout" from="SpeedChangeTimer" to="." method="_on_speed_change_timer_timeout"]
