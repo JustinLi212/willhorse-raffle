@@ -3,17 +3,40 @@
 [ext_resource type="Script" uid="uid://btiqr4p03iswq" path="res://scenes/game/race_manager.gd" id="1_4iem3"]
 [ext_resource type="Script" uid="uid://k8pmcdhlmlo6" path="res://scenes/game/horse_spawner.gd" id="2_4ulth"]
 [ext_resource type="Texture2D" uid="uid://xa8sfe0h1vtu" path="res://assets/background.png" id="2_gni4u"]
+[ext_resource type="AudioStream" uid="uid://lac37yipgrwv" path="res://assets/audio/victory_noises/Horse I.mp3" id="5_36bgb"]
 [ext_resource type="AudioStream" uid="uid://bcdba2q0yc486" path="res://assets/audio/horse running.mp3" id="5_eupcb"]
 [ext_resource type="Texture2D" uid="uid://cnqjry6s2garl" path="res://assets/front_barrier.png" id="6_l8nso"]
+[ext_resource type="AudioStream" uid="uid://1sapgwx50lja" path="res://assets/audio/victory_noises/Horse 2.mp3" id="6_mh1qa"]
+[ext_resource type="AudioStream" uid="uid://wqjm0ikpdu65" path="res://assets/audio/victory_noises/Horse 3.mp3" id="7_8ob3h"]
 [ext_resource type="PackedScene" uid="uid://dwjjd65ix1g1d" path="res://scenes/game/end_screen.tscn" id="7_yepdf"]
 [ext_resource type="Texture2D" uid="uid://dadyrtlw1ghsn" path="res://assets/cd2.png" id="8_c0cff"]
+[ext_resource type="AudioStream" uid="uid://c4iehuioaqqnr" path="res://assets/audio/victory_noises/Horse 4.mp3" id="8_c4wcl"]
 [ext_resource type="Texture2D" uid="uid://b3ef73cxnt4bs" path="res://assets/cd3.png" id="9_1ipjf"]
+[ext_resource type="AudioStream" uid="uid://dv6q6lbs7jlej" path="res://assets/audio/victory_noises/Horse 5.mp3" id="9_pqyam"]
+[ext_resource type="AudioStream" uid="uid://btk7nuq2hlwhk" path="res://assets/audio/victory_noises/Horse 6.mp3" id="10_ikc8u"]
 [ext_resource type="Texture2D" uid="uid://dlmloy4un7oc7" path="res://assets/cd1.png" id="10_l2msi"]
 [ext_resource type="Texture2D" uid="uid://lm63j8gxj1a6" path="res://assets/start.png" id="11_7x2v0"]
+[ext_resource type="AudioStream" uid="uid://ovwubgxj2ytt" path="res://assets/audio/victory_noises/Horse 7.mp3" id="11_gfhpx"]
 [ext_resource type="AudioStream" uid="uid://dqes5dxt5yis5" path="res://assets/audio/countdown.mp3" id="12_hgy02"]
+[ext_resource type="AudioStream" uid="uid://dukk711iciu27" path="res://assets/audio/victory_noises/Horse 8.mp3" id="12_r2fvd"]
+[ext_resource type="AudioStream" uid="uid://cfb4n3m6i58ws" path="res://assets/audio/victory_noises/Horse 9.mp3" id="13_aipb8"]
+[ext_resource type="AudioStream" uid="uid://bvl4hal5jyrj3" path="res://assets/audio/victory_noises/Horse 10.mp3" id="14_cnams"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mogw1"]
 normal = Vector2(1, 0)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4c6dq"]
+streams_count = 10
+stream_0/stream = ExtResource("5_36bgb")
+stream_1/stream = ExtResource("6_mh1qa")
+stream_2/stream = ExtResource("7_8ob3h")
+stream_3/stream = ExtResource("8_c4wcl")
+stream_4/stream = ExtResource("9_pqyam")
+stream_5/stream = ExtResource("10_ikc8u")
+stream_6/stream = ExtResource("11_gfhpx")
+stream_7/stream = ExtResource("12_r2fvd")
+stream_8/stream = ExtResource("13_aipb8")
+stream_9/stream = ExtResource("14_cnams")
 
 [sub_resource type="Animation" id="Animation_hk6r2"]
 length = 0.001
@@ -207,6 +230,7 @@ script = ExtResource("2_4ulth")
 stream = ExtResource("5_eupcb")
 
 [node name="HorseVictoryAudio" type="AudioStreamPlayer" parent="." unique_id=615293495]
+stream = SubResource("AudioStreamRandomizer_4c6dq")
 
 [node name="FrontBarrier" type="Sprite2D" parent="." unique_id=1159232713]
 modulate = Color(1, 1, 1, 0.5882353)

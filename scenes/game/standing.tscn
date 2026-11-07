@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://yywyvjdj5f74"]
+
+[ext_resource type="Script" uid="uid://dvmvmuk2aoyh8" path="res://scenes/game/standing.gd" id="1_k5a0t"]
+[ext_resource type="Texture2D" uid="uid://bauep1wcofm2q" path="res://assets/wills/will1.png" id="1_unsva"]
+[ext_resource type="Script" uid="uid://4ysd6xbcp7ac" path="res://scenes/start/horse_stats.gd" id="3_k7u7v"]
+
+[sub_resource type="Resource" id="Resource_66jvq"]
+script = ExtResource("3_k7u7v")
+metadata/_custom_type_script = "uid://4ysd6xbcp7ac"
+
+[node name="Standing" type="Panel" unique_id=1606472479]
+custom_minimum_size = Vector2(0, 50)
+offset_right = 400.0
+offset_bottom = 50.0
+script = ExtResource("1_k5a0t")
+stats = SubResource("Resource_66jvq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=62068989]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=719677500]
+layout_mode = 2
+
+[node name="HorseTexture" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=124674647]
+layout_mode = 2
+texture = ExtResource("1_unsva")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="PlaceAndName" type="Label" parent="MarginContainer/HBoxContainer" unique_id=574819694]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1. willhorse"
+
+[node name="Time" type="Label" parent="MarginContainer/HBoxContainer" unique_id=169497615]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+text = "00:12:34"

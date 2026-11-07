@@ -1,9 +1,6 @@
 class_name Horse
 extends Node2D
 
-signal horse_exploded
-signal horse_won
-
 const MIN_SPEED: float = 2.0
 const MAX_SPEED: float = 8.0
 
@@ -21,36 +18,22 @@ var run_timer: float = 0.0
 @onready var speed_change_timer: Timer = $SpeedChangeTimer
 
 
-var horse_images: Array[Texture2D] = [
-	preload("uid://cg8fddt4blqgx"), 
-	preload("uid://bauep1wcofm2q"), 
-	preload("uid://cp1wl78k3bdca"), 
-	preload("uid://bcbxvlprnwg0y"),
-	preload("uid://cbsboumt8xlbo"), 
-	preload("uid://poqkl4sjbrd"), 
-	preload("uid://d3xaibwwa1rfe"), 
-	preload("uid://bm4tdjnvqsja8")
-]
-
 var stats: HorseStats = HorseStats.new()
 
 var step_size = 10
 var queued_to_explode: bool = false
 var has_exploded: bool = false
 var is_racing: bool = false
-var explosion_x: float
+
+var time_started_ms: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.race_started.connect(start_racing)
 	explosion.visible = false
-	horse_sprite.texture = horse_images.pick_random()
+	horse_sprite.texture = stats.horse_image
 	name_label.text = stats.horse_name
 
-## Called by RaceManager, guarantees that the horse will explode at explosion_x
-func will_explode():
-	queued_to_explode = true
-	explosion_x = randi_range(200, 900)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -58,9 +41,6 @@ func _process(delta: float) -> void:
 	if is_racing:
 		position.x += delta * speed * step_size
 		horse_sprite.rotation_degrees = sin(PI * run_timer) * 8
-		if queued_to_explode and position.x > explosion_x:
-			finish_race()
-			explode()
 		if finish_raycast.is_colliding():
 			finish_race()
 	else:
@@ -68,12 +48,14 @@ func _process(delta: float) -> void:
 	
 func start_racing() -> void:
 	is_racing = true
+	time_started_ms = Time.get_ticks_msec()
 	randomize_speed()
 	speed_change_timer.start()
 	
 func finish_race() -> void:
 	if not has_exploded:
-		horse_won.emit()
+		EventBus.horse_won.emit(self)
+		stats.finish_time_ms = Time.get_ticks_msec() - time_started_ms
 	is_racing = false
 	speed_change_timer.stop()
 
@@ -88,7 +70,8 @@ func explode():
 	explosion.play()
 	await explosion.animation_finished
 	explosion.visible = false
-	horse_exploded.emit()
+	EventBus.horse_exploded.emit(self)
+	stats.finish_time_ms = -1
 
 
 func randomize_speed() -> void:
