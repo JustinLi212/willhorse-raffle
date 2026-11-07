@@ -14,7 +14,7 @@ var is_race_running: bool:
 
 @onready var horse_run_audio: AudioStreamPlayer = $HorseRunAudio
 @onready var horse_spawner: HorseSpawner = $HorseSpawner
-
+@onready var end_screen: Panel = $UI/EndScreen
 
 func _ready() -> void:
 	horse_spawner.horse_won.connect(_on_horse_won)
@@ -43,3 +43,7 @@ func check_race_state() -> void:
 			horse_spawner.horse_count:
 		is_race_running = false
 		print("Race over")
+		show_end_screen()
+
+func show_end_screen() -> void:
+	end_screen.show()

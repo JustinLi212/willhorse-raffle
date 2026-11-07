@@ -106,7 +106,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FinishRaycast" type="RayCast2D" parent="." unique_id=299458280]
-target_position = Vector2(65, 0)
+position = Vector2(63, 0)
+target_position = Vector2(-200, 0)
 collide_with_areas = true
 
 [node name="SpeedChangeTimer" type="Timer" parent="." unique_id=521427181]
