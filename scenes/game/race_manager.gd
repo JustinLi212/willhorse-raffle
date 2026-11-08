@@ -52,3 +52,7 @@ func _on_race_ended() -> void:
 
 func show_end_screen() -> void:
 	end_screen.show()
+
+
+func _on_speed_change_timer_timeout() -> void:
+	horse_run_audio.pitch_scale = randf_range(0.8, 1.5)

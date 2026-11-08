@@ -229,6 +229,9 @@ script = ExtResource("2_4ulth")
 [node name="HorseRunAudio" type="AudioStreamPlayer" parent="." unique_id=100025941]
 stream = ExtResource("5_eupcb")
 
+[node name="SpeedChangeTimer" type="Timer" parent="HorseRunAudio" unique_id=2014040248]
+autostart = true
+
 [node name="HorseVictoryAudio" type="AudioStreamPlayer" parent="." unique_id=615293495]
 stream = SubResource("AudioStreamRandomizer_4c6dq")
 
@@ -270,3 +273,4 @@ autoplay = &"countdown"
 stream = ExtResource("12_hgy02")
 
 [connection signal="body_entered" from="FinishLineArea2D" to="FinishLineArea2D" method="_on_body_entered"]
+[connection signal="timeout" from="HorseRunAudio/SpeedChangeTimer" to="." method="_on_speed_change_timer_timeout"]
