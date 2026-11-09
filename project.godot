@@ -17,12 +17,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*uid://0wptg1mc3w3w"
+ListManager="*uid://0wptg1mc3w3w"
 EventBus="*uid://j8yw6fm3o0uj"
 AudioManager="*uid://dl0q5sx7amixk"
+GameManager="*uid://cyq45r522kl46"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 
 [gui]

@@ -1,6 +1,7 @@
 extends Panel
 
 const standing_scene = preload("uid://yywyvjdj5f74")
+@export_file("*.tscn") var title_screen = "uid://dim6p6luhy7bo"
 
 var winners: Array[Horse]
 var exploded_horses: Array[Horse]
@@ -26,3 +27,7 @@ func display_standings() -> void:
 		var new_standing := standing_scene.instantiate() as Standing
 		new_standing.stats = exploded_horse.stats
 		standing_container.add_child(new_standing)
+
+
+func _on_continue_button_pressed() -> void:
+	get_tree().change_scene_to_file(title_screen)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvmvmuk2aoyh8" path="res://scenes/game/standing.gd" id="1_k5a0t"]
 [ext_resource type="Texture2D" uid="uid://bauep1wcofm2q" path="res://assets/wills/will1.png" id="1_unsva"]
-[ext_resource type="Script" uid="uid://4ysd6xbcp7ac" path="res://scenes/start/horse_stats.gd" id="3_k7u7v"]
+[ext_resource type="Script" uid="uid://4ysd6xbcp7ac" path="res://scenes/start/selection/horse_stats.gd" id="3_k7u7v"]
 
 [sub_resource type="Resource" id="Resource_66jvq"]
 script = ExtResource("3_k7u7v")

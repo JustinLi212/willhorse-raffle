@@ -213,8 +213,8 @@ _data = {
 script = ExtResource("1_4iem3")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=377735063]
-position = Vector2(576, 324.00003)
-scale = Vector2(0.6, 0.6000001)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("2_gni4u")
 
 [node name="FinishLineArea2D" type="Area2D" parent="." unique_id=1681114681]
@@ -237,8 +237,8 @@ stream = SubResource("AudioStreamRandomizer_4c6dq")
 
 [node name="FrontBarrier" type="Sprite2D" parent="." unique_id=1159232713]
 modulate = Color(1, 1, 1, 0.5882353)
-position = Vector2(576, 324)
-scale = Vector2(0.6, 0.6)
+position = Vector2(640, 360)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("6_l8nso")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1451823143]

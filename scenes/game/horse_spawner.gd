@@ -20,7 +20,7 @@ var horse_count: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	parse_lines_from_txt("res://data/vgdc_fall_list.txt")
+	parse_lines_from_txt(GameManager.current_data.list_file_path)
 	horse_count = names.size()
 	
 	create_horses()
@@ -33,7 +33,7 @@ func create_horses() -> void:
 		horse.stats.horse_image = horse_images.pick_random()
 		horse.horse_id = i
 		horse.scale = Vector2.ONE * 0.2
-		horse.position = Vector2(15, randf_range(206, 630))
+		horse.position = Vector2(15, randf_range(244, 716))
 		add_child(horse)
 
 

@@ -1,0 +1,1213 @@
+[gd_scene format=3 uid="uid://bsflhckys32y4"]
+
+[ext_resource type="Script" uid="uid://b8g4krcavmn02" path="res://scenes/start/selection/selection_screen.gd" id="1_6nhbb"]
+[ext_resource type="Texture2D" uid="uid://xa8sfe0h1vtu" path="res://assets/background.png" id="2_e66cl"]
+[ext_resource type="Texture2D" uid="uid://cnqjry6s2garl" path="res://assets/front_barrier.png" id="3_f27jk"]
+[ext_resource type="Texture2D" uid="uid://csbj8lfhrjmd5" path="res://assets/start_button.png" id="4_uqx4m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
+atlas = ExtResource("4_uqx4m")
+region = Rect2(370.9682, 537.8511, 1804.1938, 434.23462)
+
+[node name="SelectionScreen" type="Node" unique_id=781557317]
+script = ExtResource("1_6nhbb")
+
+[node name="PixilFrame0" type="TextureRect" parent="." unique_id=947446699]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e66cl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PixilFrame01" type="TextureRect" parent="." unique_id=1433738434]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_f27jk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=478426501]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6509804)
+
+[node name="SelectLabel" type="RichTextLabel" parent="." unique_id=629476360]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -554.0
+offset_top = 33.0
+offset_right = 554.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/normal_font_size = 85
+bbcode_enabled = true
+text = "[wave]RACE SETTINGS[/wave]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="NextButton" type="TextureButton" parent="." unique_id=556683525]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.59998
+offset_top = -126.0
+offset_right = 155.0
+offset_bottom = -49.66736
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_5vw27")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=1749718890]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -531.0
+offset_top = -226.0
+offset_right = 531.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+current_tab = 0
+tab_0/title = "List Settings"
+tab_1/title = "Horse Settings"
+
+[node name="ListSettings" type="Panel" parent="TabContainer" unique_id=776006466]
+layout_mode = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "List Settings"
+
+[node name="ListMenu" type="MarginContainer" parent="TabContainer/ListSettings" unique_id=1389081232]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/ListSettings/ListMenu" unique_id=249282547]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/ListSettings/ListMenu/VBoxContainer" unique_id=499641026]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/ListSettings/ListMenu/VBoxContainer/MarginContainer" unique_id=1281069965]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NewListEdit" type="LineEdit" parent="TabContainer/ListSettings/ListMenu/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1665004346]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Type a name to search or create a list..."
+caret_blink = true
+
+[node name="CreateButton" type="Button" parent="TabContainer/ListSettings/ListMenu/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1117527269]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Create!"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/ListSettings/ListMenu/VBoxContainer" unique_id=343884579]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ListEntries" type="VBoxContainer" parent="TabContainer/ListSettings/ListMenu/VBoxContainer/ScrollContainer" unique_id=1892862131]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EditMenu" type="MarginContainer" parent="TabContainer/ListSettings" unique_id=241680408]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/ListSettings/EditMenu" unique_id=445497989]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/ListSettings/EditMenu/VBoxContainer" unique_id=1041478202]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleEdit" type="LineEdit" parent="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer" unique_id=370549403]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "VGDC Fall 2026 NetIDs"
+caret_blink = true
+
+[node name="Label3" type="Label" parent="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer" unique_id=1984100407]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.737193, 0.7371929, 0.7371929, 1)
+theme_override_font_sizes/font_size = 24
+text = "Names Separated by"
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer" unique_id=36759939]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "\\n (new line)"
+popup/item_0/id = 0
+popup/item_1/text = ","
+popup/item_1/id = 1
+popup/item_2/text = ";"
+popup/item_2/id = 2
+popup/item_3/text = "space"
+popup/item_3/id = 3
+
+[node name="TextEdit" type="TextEdit" parent="TabContainer/ListSettings/EditMenu/VBoxContainer" unique_id=134115103]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "hojr2
+hanyb
+imatsuno
+ananyam5
+dwito
+vhhong
+wongra2
+hudq
+mvennes
+jmlouis
+pdu3
+marcr11
+wesl1
+harrisnt
+eiseng 
+rmordone 
+kelviw3
+anim4
+yahirp2
+joshsk12
+kpararod
+tuhins 
+dcottom
+rtlowe
+zdelasal
+zihal50
+dchanwit
+htins 
+vmarholi
+kairamks
+mchaikit
+hanyb
+nconzett
+luongak2
+dchanwit
+dwito
+ananyam5
+ahszeto
+asok2
+stever12
+esmugaot
+judasb
+lklek
+shakhaia
+aluy1
+hudq
+wcoppedg
+pdhaulak
+luongak2
+zdelasal
+aidanmy
+rmordone
+ekdong1
+daibj
+ejleong
+kedarh
+spagnola
+lejb2
+willb
+zdelasal
+jdli3
+rdufour
+davidps
+erikssoi
+vjgamboa
+bmtsai
+hudq
+ananyam5
+kaireey
+situj7
+seraphih
+iiheo
+anim4
+suheg1
+brayaac1
+esmugaot
+akandil1
+qlebovic
+julietw2
+rdufour
+35483817
+hudq
+rmordone 
+willb
+riderm
+jnvarel1
+ethsu1
+jhailunt
+chandruj
+vhhong
+kelviw3
+hudq
+ananyam5
+rizalp
+imatsuno
+ethsu1
+willb
+jungjj2
+luongak2
+esmugaot 
+eiseng
+wongra2
+ashnguy9
+iiheo
+mjtuazon
+jhailunt
+jdli3
+cjsamani
+marsdenl
+aemaeda
+denisk2
+dcottom
+doriansr
+suheg1
+shyamakp
+vhhong
+zdelasal
+ahwarrie
+ekdong1
+rmordone 
+sxiao9
+tuhins
+joshsk12
+arthl11
+ahszeto
+kpararod
+hojr2
+kairamks
+jeremidy
+asok2 
+liumj5
+jajara1
+tnorthro
+jhailunt
+jhailunt
+jhailunt
+hojr2
+hudq
+shajeid
+dwito
+rowea2
+willb
+imatsuno
+asok2 
+suheg1
+connermw
+jayk19
+jhailunt
+lpatlis
+knnunley
+kpararod
+bmtsai
+erikssoi
+tnorthro
+anim4
+sebasam3
+esmugaot
+hanyb
+dfleck
+hsiehs6
+joaquac3
+khangnv
+chric43
+rremesh
+arial1
+rtlowe
+tnorthro
+jhonenl
+asok2 
+mvsalvad
+marcr11
+peterjy
+asgomez6
+spagnola
+marisald
+nyac
+rmordone 
+judasb
+myrlaz1
+gschris1
+wdye
+yahirp2
+mkslaugh
+michah13
+kpararod
+lukes4
+lukes4 
+mvsalvad
+ethsu1
+rdufour 
+asok2 
+yahirp2
+wdye
+michah13
+bmtsai
+rmordone 
+zmcdonne
+audrh12
+spagnola
+shuyaw11
+khangnv
+yizongl1
+kpararod
+chric43
+yic52
+esmugaot 
+lejb2
+hudq
+biceg
+broylo
+jhailunt
+tnorthro
+kevitn25
+htins
+xinyuz75
+pghay
+zihal50
+congyil3
+congyil3
+kaireey
+yingjw10
+hojr2
+mcgillj1
+sebasam3
+sxiao9
+davil27
+davil27
+davil27
+davil27
+davil27
+davil27
+kpararod
+asok2
+marisald
+hudq
+doanbv
+jmbass1
+rtlowe
+mchaikit
+eiseng 
+cianv
+htins
+lklek
+iiheo
+hanyb
+ananyam5
+arthl11
+ahszeto
+santonie
+jdli3
+weldenj
+sxiao9
+ekdong1
+tuhins
+tylertt3
+luciusy
+luongak2
+taehwk2
+nutama
+aluy1
+lawrenml
+luongak2
+hudq
+marcr11
+kpararod
+spagnola
+daibj
+biceg
+jdli3
+taehwk2
+yaokunw
+shajeid
+ashnguy9
+lukes4
+lklek
+hanyb
+kvolynsk
+marisald 
+hudq
+lpatlis
+asok2
+erikssoi
+joaquac3
+lhauge
+jayk19
+shajeid
+sebasam3
+lucius
+lejb2
+esmuga
+kpararod
+connermw
+khangnv
+biceg
+hsiehs6
+jeremyz4
+dwito
+marcr11
+judasb
+tnorthro
+breonnar
+willb
+davidps
+hudq
+ananyam5
+luciusy
+kaireey
+shuyaw11
+biceg
+ekdong1
+iiheo
+imatsuno
+riderm
+julietw2
+seraphih
+willb
+esmugaot
+phe6
+jeremyz4
+imatsuno
+brayaac1
+ianpr
+seraphih
+kpararod
+mcgillj1
+liumj5
+gsyao
+situj7
+htins
+qlebovic
+sakuc
+nteano
+jdli3
+shajeid 
+hudq
+esmugaot
+kpararod
+hartam1
+shuyaw11
+akamatoy
+ekdong1
+iiheo
+asok2 
+rdufour
+rengelha
+mikaeleg
+tnorthro
+chric43
+amaniw1
+htins
+kevitn25
+lklek
+gustavwg
+gibsonjs
+shakhaia
+erikssoi
+hudq
+santonie
+weiaq
+chandruj
+kpararod
+chric43
+ashnguy9
+jdli3
+cjtruong
+willb
+esmugaot
+marisald
+hanyb
+benjaja1
+rengelha
+chric43
+hudq
+sxiao9
+ahszeto
+cjsamani
+htins 
+jungjj2
+pdu3
+mvsalvad
+kpararod
+doriansr
+amaniw1
+jmbass1
+tuhins
+akamatoy
+kelviw3
+bhorak
+iiheo
+shakhaia
+marsden
+ananyam5
+lpher
+ekdong1
+jeremyz4
+jdli3
+hanyb
+tnorthro
+iiheo
+liumj5
+jeremidy
+jajara1
+pqi1
+abaidya1
+hojr2
+hanyb
+asok2 
+hudq
+asok2 
+santonie
+shajeid
+rowea2
+phe6
+pqi1
+chric43
+dwito
+luciusy
+asgomez6
+connermw
+rtlowe
+nteano
+spagnola
+mcgillj1
+cjmurph4
+lhauge
+cyrusdl
+gaidie
+dlfeck
+jeremyz4
+bacabado
+sxiao9
+jayk19
+riderm
+appleyz
+wdye
+asok2 
+jhonenl
+gschris1
+lukes4
+myrlaz1 
+peterjy
+tnorthro
+rmordone 
+mkslaugh
+nyac
+wongae2
+jingxux8
+michah13
+rdufour
+lklek
+tnorthro
+jhailunt
+marsden
+mcgillj1
+kevitn25
+htins
+rmordone
+bmtsai
+shuyaw11
+hudq
+kpararod
+chric43
+lejb2
+broylo
+eiseng
+yahirp2
+jasotn16
+hanyb
+ananyam5
+dcottom
+marsdenl
+tcrosbie
+iiheo
+maggz10
+kairamks
+mvennes
+htins 
+ekdong1
+asok2 
+zdelasal
+tuhins
+rmordone
+luciusy
+irobles3
+hudq
+aluy1
+michah13
+luongak2
+qlebovic
+ekdong1
+ashnguy9
+lawrenml
+rmordone
+edcosta
+alessany
+shajeid
+asok2 
+hanyb
+hudq
+imatsuno
+kpararod
+rowea2
+gsyao
+marisald 
+asok2 
+jayk19
+lpatlis
+chandruj
+hojr2
+shajeid
+erikssoi
+bacabado
+ianpr
+dwito
+breonnar
+tnorthro
+esmugaot
+connermw
+nteano
+cwabs
+kaireey
+davidps
+hudq
+erikssoi
+qlebovic
+ianpr
+brayaac1
+ekdong1
+iiheo
+cwabs
+seraphih
+imatsuno
+willb
+areebs2
+situj7
+mcgillj1
+gsyao
+kaireey
+htins
+sakuc
+rowea2
+rmordone
+lklek
+lklek
+cyrusdl
+jdli3
+broylo
+ethsu1
+shuyaw11
+ekdong1
+sxiao9
+kpararod
+mcgillj1
+shajeid
+hudq
+akamatoy
+amaniw1
+rdufour
+ianpr
+hudq
+pannan
+jnvarel1
+rmordone
+vmarholi
+mcgillj1
+esmugaot
+asok2 
+shuyaw11
+weiaq
+luciusy
+htins 
+appleyz
+marsdenl
+hanyb
+kelviw3
+adulnuan
+kpararod 
+asok2 
+benjaja1
+weldenj
+hudq
+iiheo
+rmordone
+luciusy
+vmarholi
+irobles3
+tuhins
+ekdong1
+mvsalvad
+shuyaw11
+khoipl1
+jdli3
+tnorthro
+hanyb
+asok2
+liumj5
+abaidya1
+lklek
+chenk27
+jajara1
+nteano
+dwito
+dfleck
+mcgillj1
+hanyb
+esmugaot 
+phe6
+cjmurph4
+lklek
+lpatlis
+jayk19
+ connermw
+lukes4
+akandil1
+asok2 
+jdli3
+mkslaugh
+lukes4
+rowea2
+shuyaw11
+gschris1
+wdye
+marisald
+rmordone
+wongae2
+appleyz
+myrlaz1 
+emmaz7
+brianny2
+peterjy
+hudq
+shuyaw11
+michah13
+wdye
+alessany
+htins
+ekdong1
+rmordone
+yizongl1
+lukes4
+jeremyz4
+bmtsai
+xschwart
+riderm
+marcoac6
+lklek
+hudq
+htins
+bmtsai
+shuyaw11
+lklek
+mittali1
+ekdong1
+kevitn25
+rmordone
+kmeng5
+lukes4 
+yizongl1
+marcoac6
+jeremyz4
+jdli3
+hudq
+lukes4 
+erikssoi
+jdli3
+hanyb
+dcottom
+akandil1
+iiheo
+marsdenl
+hojr2
+jdli3
+mvennes
+rmordone
+hudq
+ahszeto
+shajeid
+tuhins
+asok2 
+kelviw3
+imatsuno
+htins
+marcoac6
+weldenj
+jdli3
+shajeid
+ekdong1
+hudq
+esmugaot
+gsyao
+lawrenml
+aluy1
+ejleong
+willb
+rmordone
+daibj
+hudq
+ianpr
+erikssoi
+gsyao
+qlebovic
+helenas2
+willb
+situj7
+seraphih
+esmugaot
+ekdong1
+kpararod 
+rowea2
+ianpr
+jdli3
+hanyb
+akandil1
+tnorthro
+ekdong1
+hudq
+htins
+kevitn25
+hudq
+jnvarel1
+rmordone
+jdli3
+weiaq
+ashnguy9
+shajeid
+rmordone
+tnorthro
+kelviw3
+annac27
+doriansr
+hanyb
+asok2 
+hudq
+qlebovic
+ashnguy9
+aemaeda
+akandil1
+michah13
+ekdong1
+jdli3
+lklek
+hanyb
+liumj5
+tnorthro
+jajara1
+abaidya1
+bernierj
+erikssoi
+imatsuno
+marcr11
+dwito
+esmugaot
+cjmurph4
+hanyb
+erikssoi
+kpararod 
+hudq
+shajeid
+jdli3
+tnorthro
+imatsuno
+myrlaz1 
+wongae2
+shuyaw11
+lukes4
+mkslaugh
+emmaz7
+wdye
+erikssoi
+rmordone
+asok2 
+jhonenl
+hudq
+rmordone
+ekdong1
+htins 
+shuyaw11
+bmtsai
+lukes4
+yic52
+lejb2
+wdye
+chric43
+chenq18
+shajeid
+jdli3
+kelviw3
+marcoac6
+htins
+marsdenl
+iiheo
+tcrosbie
+asok2 
+esmugaot 
+sebasam3
+hanyb
+weldenj
+qlebovic
+lklek
+jdli3
+nutama
+hudq
+aluy1
+lawrenml
+shajeid
+kvregala
+lukes4
+hanyb
+lklek
+hudq
+jeremyz4
+michah13
+connermw
+esmugaot 
+shajeid
+hsiehs6
+bacabado
+dwito
+willb
+jayk19
+rowea2
+chriz15
+ianpr
+lklek
+hudq
+mcgillj1
+vjgamboa
+imatsuno
+seraphih
+willb
+chriz15
+erikssoi
+jayleyt
+ekdong1
+alexanba
+situj7
+brayaac1
+qlebovic
+michah13
+jeremyz4
+hudq
+ekdong1
+rmordone
+sebasam3
+wdye
+khangnv
+imatsuno
+esmugaot
+hudq
+kpararod
+noahdg
+benjaja1
+hanyb
+appleyz
+doriansr
+kelviw3
+jdli3
+hanyb
+bmtsai
+lklek
+jajara1
+connermw
+liumj5
+esmugaot
+abaidya1
+chenk27
+hanyb
+hudq
+chric43
+connermw
+shajeid
+dwito
+esmugaot
+dfleck
+michah13
+erikssoi
+nutama
+ekdong1
+mkslaugh
+asok2 
+jhonenl
+wongae2
+myrlaz1 
+michah13
+lukes4
+peterjy
+nyac
+ekdong1
+bmtsai
+hudq
+yic52
+shuyaw11
+mcgillj1
+lukes4
+marcoac6
+hudq
+jdli3
+kelviw3
+ekdong1
+nconzett
+hanyb
+imatsuno
+sebasam3
+vmarholi
+kpararod
+shuyaw11
+hanyb
+dwito
+erikssoi
+connermw
+pannan
+tnorthro
+shajeid 
+ekdong1
+eamugaot
+huda
+imatsuno
+lpatlis
+spagnola
+erikssoi
+hudq
+esmugaot
+ekdong1 
+daibj
+kaireey
+chriz15
+jayleyt
+seraphih
+connermw
+imatsuno
+willb
+htins
+kpararod 
+ianpr
+qlebovic
+spagnola
+situj7
+gsyao
+davidps
+shuyaw11
+jdli3
+akandil1
+ekdong1
+hudq
+willb
+htins
+spagnola
+hanyb
+jnvarel1
+shuyaw11
+weiaq
+hudq
+bmtsai
+jdli3
+fnkim
+chandruj 
+weiaq
+esmugaot
+lawrenml
+qlebovic
+fnkim
+shuyaw11
+hudq
+willb
+doriansr
+hanyb
+benjaja1
+kelviw3
+shajeid
+jdli3
+hanyb
+vjgamboa
+liumj5
+connermw
+lklek
+jajara1
+bmtsai
+abaidya1
+vjgamboa
+dwito
+connermw
+lklek
+santonie
+esmugaot
+dfleck
+"
+caret_blink = true
+highlight_current_line = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/ListSettings/EditMenu/VBoxContainer" unique_id=499223367]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SaveButton" type="Button" parent="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer2" unique_id=829265994]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Save"
+
+[node name="CancelButton" type="Button" parent="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer2" unique_id=1241245227]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cancel"
+
+[node name="HorseSettings" type="Panel" parent="TabContainer" unique_id=740067136]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+metadata/_tab_name = "Horse Settings"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="TabContainer/ListSettings/ListMenu/VBoxContainer/MarginContainer/HBoxContainer/CreateButton" to="." method="_on_create_button_pressed"]
+[connection signal="pressed" from="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer2/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer2/CancelButton" to="." method="_on_cancel_button_pressed"]

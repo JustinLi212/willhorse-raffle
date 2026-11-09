@@ -238,17 +238,7 @@ offset_top = 342.32504
 offset_right = 706.0
 offset_bottom = 417.32504
 theme_override_font_sizes/font_size = 48
-text = "Continue"
-
-[node name="EndButton" type="Button" parent="." unique_id=8443460]
-visible = false
-layout_mode = 0
-offset_left = 429.5
-offset_top = 330.75
-offset_right = 697.5
-offset_bottom = 405.75
-theme_override_font_sizes/font_size = 48
-text = "Game Over"
+text = "To Title"
 
 [node name="Label" type="Label" parent="." unique_id=1259503892]
 layout_mode = 0
@@ -270,3 +260,5 @@ offset_bottom = 418.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]
