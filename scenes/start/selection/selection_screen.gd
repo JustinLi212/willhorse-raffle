@@ -125,6 +125,7 @@ func update_edit_menu() -> void:
 func _on_save_button_pressed() -> void:
 	var file: FileAccess = FileAccess.open(list_to_edit.list_file_path, FileAccess.WRITE)
 	file.store_string(text_edit.text)
+	file.close()
 	list_to_edit.list_name = title_edit.text
 	ListManager.save_lists()
 	refresh_lists()

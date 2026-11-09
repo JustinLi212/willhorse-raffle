@@ -172,7 +172,7 @@ theme_override_font_sizes/font_size = 36
 text = "VGDC Fall 2026 NetIDs"
 caret_blink = true
 
-[node name="Label3" type="Label" parent="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer" unique_id=1984100407]
+[node name="Label" type="Label" parent="TabContainer/ListSettings/EditMenu/VBoxContainer/HBoxContainer" unique_id=1984100407]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.737193, 0.7371929, 0.7371929, 1)
